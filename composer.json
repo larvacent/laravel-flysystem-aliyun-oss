@@ -1,0 +1,28 @@
+{
+  "name": "larva/laravel-flysystem-aliyun-oss",
+  "description": "This is a Flysystem adapter for the Aliyun OSS.",
+  "keywords": [ "flysystem", "aliyun", "oss", "larva" ],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "illuminate/support": "^5.0",
+    "league/flysystem": "^1.0.8",
+    "aliyuncs/oss-sdk-php": "~2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Larva\\Flysystem\\AliyunOss\\": "src"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Larva\\Flysystem\\AliyunOss\\AliyunOssServiceProvider"
+      ]
+    }
+  },
+  "prefer-stable": true
+}
