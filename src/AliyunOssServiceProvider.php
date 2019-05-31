@@ -7,10 +7,10 @@
 
 namespace Larva\Flysystem\AliyunOss;
 
-use OSS\OssClient;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\ServiceProvider;
 use League\Flysystem\Filesystem;
+use OSS\OssClient;
 
 /**
  * 阿里云OSS服务提供者
@@ -40,7 +40,8 @@ class AliyunOssServiceProvider extends ServiceProvider
             $adapter = new AliyunOssAdapter(
                 $client,
                 $config['bucket'],
-                $config['prefix'] ?? null
+                $config['prefix'] ?? null,
+                $config['options'] ?? []
             );
             $filesystem = new Filesystem($adapter);
             return $filesystem;
